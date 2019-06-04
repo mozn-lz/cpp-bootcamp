@@ -36,12 +36,12 @@ void	phonebook::add(void){
 void	phonebook::search(void) {
 	if (this->_f_name.size() > 10) {
 		this->_f_name.replace(9, this->_f_name.size(), ".");
-		std::cout << this->_f_name;
+		std::cout << this->_f_name << " | ";
 	}
 	
 	if (this->_l_name.size() > 10) {
 		this->_l_name.replace(9, this->_l_name.size(), ".");
-		std::cout << this->_l_name;
+		std::cout << this->_l_name << " | ";
 	}
 	
 	if (this->_n_name.size() > 10) {
