@@ -19,10 +19,10 @@ class phonebook {
 		std::string _underwear;
 		std::string _secret;
 	public:
-		phonebook();
+		phonebook(void);
 		void add(void);
 		void search(void);
-		~phonebook();
+		~phonebook(void);
 };
 
 #endif

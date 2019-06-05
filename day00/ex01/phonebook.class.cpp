@@ -29,10 +29,6 @@ void	phonebook::add(void){
 	std::getline(std::cin, this->_secret);
 }
 
-	// display_ten(f_name);
-	// display_ten(l_name);
-	// display_ten(n_name);
-
 void	phonebook::search(void) {
 	if (this->_f_name.size() > 10) {
 		this->_f_name.replace(9, this->_f_name.size(), ".");
