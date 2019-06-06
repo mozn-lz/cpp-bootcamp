@@ -1,22 +1,32 @@
-#include <iostream>
-#include <string>
 #include "Pony.hpp"
 
-Pony::Pony(){
-	std::cout << "\nWhat is your pony's name? ";
-	std::getline(std::cin, this->name);
+void Pony::born(std::string name){
+	name = this->_name;
+	std::cout << _name << " is born.\n";
+}
+
+void Pony::eat(std::string name){
+	name = this->_name;
+	std::cout << this->_name << " eats way too much" << _eat  << "\n";
+}
+
+void Pony::drink(std::string name){
+	name = this->_name;
+	std::cout << this->_name << " drinks too little " << _drink << "\n";
+}
+
+
+
+Pony::Pony(std::string name){
+	name = this->_name;
 	std::cout << "\nWhat does your pony eat? ";
-	std::getline(std::cin, this->eat);
+	std::getline(std::cin, this->_eat);
 	std::cout << "\nWhat does your pony drink? ";
-	std::getline(std::cin, this->drink);
-	std::cout << "\nWhat time does your pony sleep? ";
-	std::getline(std::cin, this->sleep);
-	std::cout << "\nhow fast does it run:  ";
-	std::getline(std::cin, this->run);
+	std::getline(std::cin, this->_drink);	
 	std::cout << "\n";
 }
 
 Pony::~Pony(){
-	std::cout << this->name << " ate "<< this->eat <<", drank " << this->drink <<" .\nIt lived a short but happy life, but it ran too " << this->run << " and now its dead\n";
-//	pn();
+	std::cout << "Your Pony ate "<< this->_eat <<", drank " << this->_drink
+			<<" .\nIt lived a short but happy life and now its dead\n";
 }

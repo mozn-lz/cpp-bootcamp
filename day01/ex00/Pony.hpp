@@ -6,13 +6,16 @@
 
 class Pony{
 	public:
-		std::string name;
-		std::string eat;
-		std::string drink;
-		std::string sleep;
-		std::string run;
-		Pony();
+		void born(std::string name);
+		void eat(std::string name);
+		void drink(std::string name);
+		Pony(std::string name);
 		~Pony();
+
+	private:
+		std::string _name;
+		std::string _eat;
+		std::string _drink;
 };
 
 #endif
