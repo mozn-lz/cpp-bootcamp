@@ -3,47 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.class.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: msefako <msefako@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mozn <mozn@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/06 19:19:14 by msefako           #+#    #+#             */
-/*   Updated: 2019/06/06 19:51:20 by msefako          ###   ########.fr       */
+/*   Updated: 2019/06/06 22:08:31 by mozn             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef FIXED_CLASS_HPP
+#define FIXED_CLASS_HPP
 #include <iostream>
 
 class Fixed
 {
     private:
         int fixPointVal;
-        int static const fracBits = 8;
+        int static const fracBits;
     public:
         Fixed();
-        Fixed(const Fixed &fc);
+        Fixed(const Fixed &n);
         // assignation operator overload
-        ~Fixed();
         int     getRawBits( void ) const;
         void    setRawBits( int const raw );
+		
+		Fixed & operator=(Fixed const & res);
+        ~Fixed();
 };
 
-Fixed::Fixed(/* args */)
-{
-    fixPointVal = 0;
-    std::cout << "Default constructor called";
-    
-}
-
-Fixed::~Fixed()
-{
-}
-Fixed::Fixed(const Fixed &fc){
-    
-}
-
-int     Fixed::getRawBits( void ) const{
-    std::cout << "getRawBits member function called";
-}
-
-void    Fixed::setRawBits( int const raw ){
-    std::cout << "Assignation operator called";
-}
+#endif // !FIXED_CLASS_HPP
