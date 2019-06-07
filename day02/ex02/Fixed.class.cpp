@@ -1,6 +1,6 @@
 #include "Fixed.class.hpp"
 
-const int Fixed::_fracBits = 8;
+const int Fixed::__fracBits = 8;
 
 Fixed::Fixed(void):	_fixedPointValue(0) {
 	// std::cout << "Default constructor called" << std::endl;
@@ -13,12 +13,12 @@ Fixed::Fixed(Fixed const & n) {
 	return;
 }
 
-Fixed::Fixed(int const num): _fixedPointValue(num << _fracBits) {
+Fixed::Fixed(int const num): _fixedPointValue(num << __fracBits) {
 	// std::cout << "Int constructor called" << std::endl;
 	return;
 }
 
-Fixed::Fixed(float const num): _fixedPointValue(roundf(num * (1 << _fracBits))) {
+Fixed::Fixed(float const num): _fixedPointValue(roundf(num * (1 << __fracBits))) {
 	// std::cout << "Float constructor called" << std::endl;
 }
 
@@ -34,11 +34,11 @@ void	Fixed::setRawBits(int const raw) {
 }
 
 int		Fixed::toInt(void) const {
-	return (this->_fixedPointValue >> this->_fracBits);
+	return (this->_fixedPointValue >> this->__fracBits);
 }
 
 float	Fixed::toFloat(void) const {
-	return (((float)(this->_fixedPointValue)) / (1 << _fracBits));
+	return (((float)(this->_fixedPointValue)) / (1 << __fracBits));
 }
 
 Fixed & Fixed::operator=(Fixed const & res) {
@@ -53,12 +53,12 @@ Fixed & Fixed::operator-(Fixed const & res) {
 }
 
 Fixed & Fixed::operator/(Fixed const & res) {
-	this->_fixedPointValue = ((this->_fixedPointValue << _fracBits) / res.getRawBits());
+	this->_fixedPointValue = ((this->_fixedPointValue << __fracBits) / res.getRawBits());
 	return (*this);
 }
 
 Fixed Fixed::operator*(Fixed const & res) {
-	this->_fixedPointValue = ((long)(this->_fixedPointValue) * (long)(res.getRawBits()) >> this->_fracBits);
+	this->_fixedPointValue = ((long)(this->_fixedPointValue) * (long)(res.getRawBits()) >> this->__fracBits);
 	return (*this);
 }
 

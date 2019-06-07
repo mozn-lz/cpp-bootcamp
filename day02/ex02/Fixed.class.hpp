@@ -7,7 +7,7 @@
 class Fixed {
 private:
 	int _fixedPointValue;
-	static const int _fracBits;
+	static const int __fracBits;
 
 public:
 	Fixed(void);
